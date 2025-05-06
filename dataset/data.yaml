@@ -1,0 +1,38 @@
+train: C:/Users/manho/Downloads/Yolo-traning_ASM - copy/dataset/images/train
+val: C:/Users/manho/Downloads/Yolo-traning_ASM - copy/dataset/images/val
+
+nc: 32  # number of classes
+names: [
+    '300mToLeftExit',
+    'BlueCentreRoadClosed',
+    'BusLine',
+    'Dangerous',
+    'Diversion',
+    'DiversionEnd',
+    'ExceptHolidays',
+    'ExceptTaxi',
+    'KeepRight',
+    'LeftRoadClosed',
+    'LengthOver',
+    'NoEntry',
+    'NoParking24h',
+    'NoParkingEnd',
+    'NoParkingGreen',
+    'NoParkingRed',
+    'NoParkingYellow',
+    'RightLaneNarrowing',
+    'RightRoadClosed',
+    'RoadClosed',
+    'RoadNarrowsBlocked',
+    'RoadNarrowsBoth',
+    'RoadNarrowsRight',
+    'Roadworks',
+    'Speed100km',
+    'Speed110km',
+    'Speed50km',
+    'Speed70km',
+    'Speed80km',
+    'TemporaryClosureOfRoad',
+    'TrafficControlAhead',
+    'WhenRedLightShowsWaitHere'
+]

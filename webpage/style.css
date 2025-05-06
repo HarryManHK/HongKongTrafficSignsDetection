@@ -1,0 +1,120 @@
+/* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Layout Styling */
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    overflow: hidden;
+    background-image: url("assets/background.png");
+    background-repeat: no-repeat;        /* Prevents the background image from repeating */
+    background-size: cover;              /* Scales the image to cover the entire viewport */
+    background-position: center center;  /* Centers the background image */
+    background-attachment: fixed;        /* Keeps the background image fixed during scroll */
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.box{
+    /* Center the box */
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    background: rgba(255, 255, 255, 0.19);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: rgba(255, 255, 255, 0.4) 0px 4px 16px,
+    rgba(255, 255, 255, 0.4) 0px 8px 24px,
+    rgba(255, 255, 255, 0.4) 0px 16px 56px;
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    max-width: 400px;
+    width: 90%;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px; /* Adds space below the logo */
+}
+
+.box h1{
+    text-align: center;
+    color: #020202;
+}
+
+.box h2{
+    text-align: center;
+    color: #020202;
+}
+
+.box .input-group label {
+    color: #020202;
+    font-weight: bold;
+}
+
+.box .input-group input{
+    width: 100%;
+    font-size: 16px;
+    padding: 8px;
+    border-radius:8px;
+    border: 1px solid #ccc;
+    background-color: Azure;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box .input-group input:focus{
+    background-color: Ivory;
+    outline: none;
+    box-shadow: rgba(255, 255, 255, 0.4) 0px 4px 16px,
+    rgba(255, 255, 255, 0.4) 0px 8px 24px,
+    rgba(255, 255, 255, 0.4) 0px 16px 56px;
+}
+
+.box button{
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 16px;
+    white-space: nowrap;
+    border-radius:8px;
+    background-color: AliceBlue;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box button:hover{
+    background-color: Ivory;
+    box-shadow: rgba(255, 255, 255, 0.4) 0px 4px 16px,
+    rgba(255, 255, 255, 0.4) 0px 8px 24px,
+    rgba(255, 255, 255, 0.4) 0px 16px 56px;
+}
+
+.box span {
+    padding-bottom: 20px;
+}
+
+.box a{
+    font-size: 12px;
+    color: black;
+    text-decoration: none;
+}
+
+.box a:hover{
+    color: Ivory;
+    text-shadow: 1px 0 10px Ivory;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <title>SmartCarCam Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<button class="toggle-button d-md-none">
+    <i class="bi bi-list"></i>
+</button>
+
+<!-- sidebar -->
+<nav class="sidebar d-flex flex-column">
+    <div>
+        <a href="#" class="navbar-brand text-white d-flex align-items-center justify-content-center">
+            <img src="assets/logo.png" alt="SmartCarCam Logo" width="40" height="40" class="me-2">
+            SmartCarCam
+        </a>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="#home" class="nav-link active" data-page="home">
+                    <i class="bi bi-house-door-fill"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#video" class="nav-link" data-page="video">
+                    <i class="bi bi-camera-video-fill"></i>
+                    <span>Video</span>
+                </a>
+            </li>
+            <li>
+                <a href="#settings" class="nav-link" data-page="settings">
+                    <i class="bi bi-gear-fill"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- bottom -->
+    <div class="user-section">
+        <div class="dropdown">
+            <a href="#" class="dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-fill"></i>
+                <span>User</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <i class="bi bi-person-circle me-2"></i> Profile
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <i class="bi bi-gear me-2"></i> Settings
+                    </a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <a class="dropdown-item text-danger" href="#" onclick="logout()">
+                        <i class="bi bi-box-arrow-right me-2"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- main content -->
+<div class="content">
+    <!-- Add this inside the body where appropriate -->
+    <div class="camera-selection mb-3">
+        <label for="cameraSelect" class="form-label">Choose Camera:</label>
+        <select id="cameraSelect" class="form-select"></select>
+    </div>
+    <!-- Home page -->
+    <div id="home" class="page active position-relative">
+        <!-- GEO location box -->
+        <div id="locationInfo" class="position-absolute top-0 end-0 p-3 bg-light bg-opacity-75 rounded m-3 shadow">
+            <i class="bi bi-geo-alt-fill me-2"></i>
+            <span id="geolocation">正在獲取位置...</span>
+            <br>
+            <i class="bi bi-speedometer2 me-2"></i>
+            <span id="speed">速度: 0 km/h</span>
+        </div>
+
+        <h1 class="mb-5" content="center">Live Car Camera</h1>
+        <div class="video-container position-relative">
+            <video autoplay="true" id="videoElement"></video>
+            <canvas id="canvas" width="1280" height="720"></canvas>
+
+            <!-- alert bar -->
+            <div class="alert-bar" id="alertBar">
+                <!-- will add traffic sign here -->
+            </div>
+        </div>
+        <div class="btn-group mt-4" role="group">
+            <button type="button" class="btn btn-success" id="startBtn">
+                <i class="bi bi-play-fill me-1"></i> Start
+            </button>
+            <button type="button" class="btn btn-danger" id="stopBtn">
+                <i class="bi bi-stop-fill me-1"></i> Stop
+            </button>
+            <button type="button" class="btn btn-primary" id="recordBtn">
+                <i class="bi bi-record-circle-fill me-1"></i> Record
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Settings page -->
+    <div id="settings" class="page" style="display: none;">
+        <!-- ... Settings content ... -->
+    </div>
+
+</div>
+
+<!-- logout -->
+<script>
+    function logout() {
+        if (confirm("Are you sure you want to logout?")) {
+            window.location.href = "login.html";
+        }
+    }
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Socket.io  -->
+<script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+<!-- my JavaScript -->
+<script src="app.js"></script>
+</body>
+</html>
